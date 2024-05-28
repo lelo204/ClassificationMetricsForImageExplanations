@@ -30,7 +30,7 @@ This code runs under Python 3.10.4. The python dependencies are defined in `requ
 
 ## Available mosaics
 
-We provide two data sets (located in folder _data_) that can be used to generate mosaics for the XAI evaluation (this is done by executing the script `xai_eval_scripy.py`; detailed instructions on how to run experiments see below). The authors of [[2]](#2) provide already generated mosaics in their [repository](https://github.com/HPAI-BSC/Focus-Metric#requirements), which can also be used with our code (modifications???).
+We provide two data sets (located in folder _data_) that can be used to generate mosaics for the XAI evaluation (this is done by executing the script `xai_eval_scripy.py`; detailed instructions on how to run experiments see below). The authors of [[2]](#2) provide mosaics in their [repository](https://github.com/HPAI-BSC/Focus-Metric#requirements), which can also be used with our code. To do so, download the mosaics and copy them to `data\mosaics\`. When executing `xai_eval_script.py` the '--dataset' argument has to correspond to the mosaics (i.e. --dataset ilsvrc2012 for --mosaics ilsvrc2012_mosaics) and the '--mosaics_per_class' argument has to be None.
 
 ### Dataset Instructions
 
