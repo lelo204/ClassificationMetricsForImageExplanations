@@ -1,4 +1,4 @@
-# Classification Metrics for Image Explanations
+# Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations
 
 In [[1]](#1) we further develop the work of [[2]](#2) and [[3]](#3), which provide a set of evaluation metrics for saliency methods. We extend this set to a comprehensive list of metrics that mimic common metrics for classification evaluation based on the definition of correct and incorrect feature importance in images. Particularly, the following points are addressed:
 
@@ -21,7 +21,7 @@ of Gildenblat *et al.*
 - Integrated Gradients (IG) [[14]](#14); implementation based on [Captum](https://github.com/pytorch/captum) of Kokhlikyan *et al.* [[15]](#15).
 
 
-The first two saliency methods (KernelSHAP and B-cos) were added by us, the other six sailiency methods have been adopted unchanged from the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric) repository.
+The first two saliency methods (KernelSHAP and B-cos) were added by us, the other six saliency methods have been adopted unchanged from the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric) repository.
 
 
 ### Requirements
@@ -72,10 +72,14 @@ Now the new dataset can be used to run experiments with different saliency metho
 
   The mosaics will be stored in `data/mosaics/carsncats_mosaic`, the heatmaps will be saved to folder `data/explainability/hash` and the results for the classification metrics will be stored in the corresponding csv-file under `data/explainability/hash.csv`. To find the hash that relates to the experiment, check `data/explainability/hash_explainability.csv`. If the mosaics already exist without a corresponding dataset, simply use the script with a consistent name for the **--dataset** argument and in coherence with the classes mentioned in *Dataset instructions*.
 
-- `sumgen_script.py`
-- `compute_viz_alphas.py`
-- `xai_ranking.py`
-- `model_eval.py`
+## How to vizualize results
+To receive meaningful results about XAI-performance with the saliency metrics, models should be able to distinguish well between the different classes used in the mosaics. To test this, the script `model_eval.py` can be used. Corresponding accuracies are saved in `evaluation/model_accs.csv`.
+
+There are a few different ways to vizualize the results of the experiments. For a general inspection of the different heatmaps of a single input image, the `sumgen_script.py` can be used. `evaluation/create_summaries.bat` provides a way as to create all relevant summaries for the datasets used in our paper. Note the `--info` flag when using `sumgen_script.py`, as not using the flag creates summaries as in the paper, whereas `--info` also shows all saliency metrics in the summaries to check whether new metrics work as expected. Created summaries are saved in `data\mosaics\summary`.
+<img src="data\mosaics\summary\imagenet_9981_resnet50.jpg" alt="Sample Summary Image for ImageNet" width="700"/>
+
+To evaluate results over entire datasets, `compute_viz_alphas.py` can be used, where `evaluation\compute_alphas.bat` provides some examples for its usage. This script generates the violion plots of the saliency metric performance, the correlation plots for spearmans rank correlation as the inter-method reliability (both saved in `evaluation/figures/`) and krippendorff's alpha values as the inter-rater reliability (saved as a .csv in `evaluation/alphas.csv`).
+We also evaluated krippendorff's alpha between different datasets, different metrics on the same dataset and the two different models (only shortly mentioned in the paper). These experiments can be found (or created with a bit of tweaking) in `xai_ranking.py`.
 
 ## Cite
 Please cite our paper when using this code. 
