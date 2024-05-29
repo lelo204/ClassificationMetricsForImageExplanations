@@ -76,7 +76,7 @@ Now the new dataset can be used to run experiments with different saliency metho
 
 - There are a few different ways to vizualize the results of the experiments. For a general inspection of the different heatmaps of a single input image, the `sumgen_script.py` can be used. `evaluation/create_summaries.bat` provides a way as to create all relevant summaries for the datasets used in our paper. Note the `--info` flag when using `sumgen_script.py`, as not using the flag creates summaries as in the paper, whereas `--info` also shows all saliency metrics in the summaries to check whether new metrics work as expected. Created summaries are saved in `data\mosaics\summary`.
 
-  <img src="https://github.com/lelo204/ClassificationMetricsForImageExplanations/blob/main/data/mosaics/summary/imagenet_9981_resnet50.jpg?raw=true" alt="Sample Summary Image for ImageNet" width="700"/>
+  <img src="https://github.com/lelo204/ClassificationMetricsForImageExplanations/blob/main/imagenet_9981_resnet50.jpg?raw=true" alt="Sample Summary Image for ImageNet" width="700"/>
 
 
   <img src="imagenet_9981_resnet50.jpg" alt="Sample Summary Image for ImageNet" width="700"/>
