@@ -2,11 +2,11 @@
 
 In [[1]](#1) we further develop the work of [[2]](#2) and [[3]](#3), which provide a set of evaluation metrics for saliency methods. We extend this set to a comprehensive list of metrics that mimic common metrics for classification evaluation based on the definition of correct and incorrect feature importance in images. Particularly, the following points are addressed:
 
-- We include saliency metrics that produce interesting results (e.g. specificity), but where overlooked in [[3]](#3)
+- We include saliency metrics that produce interesting results (e.g. specificity), but were overlooked in [[3]](#3)
 - In addition to the saliency methods discussed in [[2]](#2), we also include SHAP [[4]](#4) and B-cos [[5]](#5)
 - We show how such metrics can be evaluated using Krippendorff's $\alpha$ [[6]](#6) and Spearman's $\rho$ [[7]](#7)[[8]](#8) instead of taking them at face value (which is already a problem in XAI, as discussed in the paper)
 
-This repository contains the code and datasets that are needed to recreate the experiments conducted in our paper: [Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations](LINK). As our paper is an extension of [[2]](#2), this repository also builds on their implementation of the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric).
+This repository contains the code and datasets that are needed to recreate the experiments conducted in our paper: [Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations](LINK). As our paper builds on [[2]](#2), this repository also builds on their implementation of the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric).
 
 ### Explainability methods: 
 
