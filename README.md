@@ -57,7 +57,7 @@ The models used here are all trained on ImageNet and are not fine-tuned. Therefo
 
 Now the new dataset can be used to run experiments with different saliency methods.
 
-## How to run experiments
+## How to run experiments and visualize results
 
 - To generate a mosaic dataset and corresponding heatmaps plus the classification metrics per mosaic, run script `xai_eval_script.py`, with the arguments
   - **--dataset**: dataset used for mosaic generation
@@ -72,16 +72,17 @@ Now the new dataset can be used to run experiments with different saliency metho
 
   The mosaics will be stored in `data/mosaics/carsncats_mosaic`, the heatmaps will be saved to folder `data/explainability/hash` and the results for the classification metrics will be stored in the corresponding csv-file under `data/explainability/hash.csv`. To find the hash that relates to the experiment, check `data/explainability/hash_explainability.csv`. If the mosaics already exist without a corresponding dataset, simply use the script with a consistent name for the **--dataset** argument and in coherence with the classes mentioned in *Dataset instructions*.
 
-## How to vizualize results
-To receive meaningful results about XAI-performance with the saliency metrics, models should be able to distinguish well between the different classes used in the mosaics. To test this, the script `model_eval.py` can be used. Corresponding accuracies are saved in `evaluation/model_accs.csv`.
+- To receive meaningful results about XAI-performance with the saliency metrics, models should be able to distinguish well between the different classes used in the mosaics. To test this, the script `model_eval.py` can be used. Corresponding accuracies (top-1 and top-5 accuracy for up to three target classes (depending on investigated dataset)) are saved in `evaluation/model_accs.csv`.
 
-There are a few different ways to vizualize the results of the experiments. For a general inspection of the different heatmaps of a single input image, the `sumgen_script.py` can be used. `evaluation/create_summaries.bat` provides a way as to create all relevant summaries for the datasets used in our paper. Note the `--info` flag when using `sumgen_script.py`, as not using the flag creates summaries as in the paper, whereas `--info` also shows all saliency metrics in the summaries to check whether new metrics work as expected. Created summaries are saved in `data\mosaics\summary`.
-<img src="data\mosaics\summary\imagenet_9981_resnet50.jpg" alt="Sample Summary Image for ImageNet" width="700"/>
+- There are a few different ways to vizualize the results of the experiments. For a general inspection of the different heatmaps of a single input image, the `sumgen_script.py` can be used. `evaluation/create_summaries.bat` provides a way as to create all relevant summaries for the datasets used in our paper. Note the `--info` flag when using `sumgen_script.py`, as not using the flag creates summaries as in the paper, whereas `--info` also shows all saliency metrics in the summaries to check whether new metrics work as expected. Created summaries are saved in `data\mosaics\summary`.
 
-To evaluate results over entire datasets, `compute_viz_alphas.py` can be used, where `evaluation\compute_alphas.bat` provides some examples for its usage. This script generates the violion plots of the saliency metric performance, the correlation plots for spearmans rank correlation as the inter-method reliability (both saved in `evaluation/figures/`) and krippendorff's alpha values as the inter-rater reliability (saved as a .csv in `evaluation/alphas.csv`).
-We also evaluated krippendorff's alpha between different datasets, different metrics on the same dataset and the two different models (only shortly mentioned in the paper). These experiments can be found (or created with a bit of tweaking) in `xai_ranking.py`.
+  <img src="data\mosaics\summary\imagenet_9981_resnet50.jpg" alt="Sample Summary Image for ImageNet" width="700"/>
 
-## Cite
+- To evaluate results over entire datasets, `compute_viz_alphas.py` can be used, where `evaluation\compute_alphas.bat` provides some examples for its usage. This script generates the violin plots of the saliency metric performance, the correlation plots for Spearmans rank correlation as the inter-method reliability (both saved in `evaluation/figures/`) and Krippendorff's $\alpha$ values as the inter-rater reliability (saved as a .csv in `evaluation/alphas.csv`).
+
+- We also evaluated Krippendorff's $\alpha$ between different datasets, different metrics on the same dataset and the two different models (only shortly mentioned in the paper). The script `xai_ranking.py` ranks the saliency methods per architecture and dataset according to the mean and median value for each of the saliency metrics (this is saved in `evaluation/rankings`). With these rankings, Krippendorff's $\alpha$ can be calculated for every architecture - dataset - metric combination (the other experiments can be created with a bit of tweaking in the script). The result is saved in `evaluation/alphas.csv`.
+
+## Citation
 Please cite our paper when using this code. 
 ```
 **PLACEHOLDER**

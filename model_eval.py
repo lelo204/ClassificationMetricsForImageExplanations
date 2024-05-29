@@ -12,7 +12,7 @@ from explainability import pipelines as ppl
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 architectures = ['resnet50', 'vgg11_bn']
-datasets = [MosaicArgs.CARSNCATS_MOSAIC, MosaicArgs.MOUNTAINDOGS_MOSAIC, MosaicArgs.GREATTIGERSHARKS_MOSAIC, MosaicArgs.ILSVRC2012_MOSAIC]
+datasets = [MosaicArgs.CARSNCATS_MOSAIC, MosaicArgs.MOUNTAINDOGS_MOSAIC, MosaicArgs.ILSVRC2012_MOSAIC]
 
 transformation = transforms.Compose([
         transforms.ToTensor(),
