@@ -6,7 +6,7 @@ In [[1]](#1) we further develop the work of [[2]](#2) and [[3]](#3), which provi
 - In addition to the saliency methods discussed in [[2]](#2), we also include SHAP [[4]](#4) and B-cos [[5]](#5)
 - We show how such metrics can be evaluated using Krippendorff's $\alpha$ [[6]](#6) and Spearman's $\rho$ [[7]](#7)[[8]](#8) instead of taking them at face value (which is already a problem in XAI, as discussed in the paper)
 
-This repository contains the code and datasets that are needed to recreate the experiments conducted in our paper: [Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations](LINK). As our paper builds on [[2]](#2), this repository also builds on their implementation of the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric).
+This repository contains the code and datasets that are needed to recreate the experiments conducted in our paper: [Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations](https://dl.acm.org/doi/10.1145/3630106.3658537). As our paper builds on [[2]](#2), this repository also builds on their implementation of the [Focus-metric](https://github.com/HPAI-BSC/Focus-Metric).
 
 ### Explainability methods: 
 
@@ -92,7 +92,7 @@ Please cite our paper when using this code.
 
 ## References
 <a id="1">[1]</a>
-Fresz, B., Lörcher, L., & Huber, M. (2024). Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations.
+Fresz, B., Lörcher, L., & Huber, M. (2024). Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations. In The 2024 ACM Conference on Fairness, Accountability, and Transparency (FAccT '24). Association for Computing Machinery, New York, NY, USA, 1–19.
 
 <a id="2">[2]</a>
 Arias-Duart, A., Parés, F., & García-Gasulla, D. (2021). Focus! Rating XAI Methods and Finding Biases with Mosaics. arXiv preprint arXiv:2109.15035
