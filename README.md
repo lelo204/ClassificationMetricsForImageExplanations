@@ -85,10 +85,19 @@ Now the new dataset can be used to run experiments with different saliency metho
 ## Citation
 Please cite our paper when using this code. 
 ```
-**PLACEHOLDER**
+@inproceedings{Fresz2024saliencyMetrics,
+author = {Fresz, Benjamin and Lörcher, Lena and Huber, Marco},
+title = {Classification Metrics for Image Explanations: Towards Building Reliable XAI-Evaluations},
+year = {2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3630106.3658537},
+doi = {10.1145/3630106.3658537},
+booktitle = {The 2024 ACM Conference on Fairness, Accountability, and Transparency},
+location = {Rio de Janeiro, Brazil},
+series = {FAccT '24}
+}
 ```
-
-
 
 ## References
 <a id="1">[1]</a>
