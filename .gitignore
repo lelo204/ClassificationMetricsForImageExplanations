@@ -3,3 +3,5 @@ __pycache__
 *.pyc
 *.ipynb
 *.csv
+
+!imagenet_labels.csv
